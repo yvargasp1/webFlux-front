@@ -18,6 +18,10 @@ input {
   display: flex; /* Opcional: para usar flexbox */
   flex-direction: column; /* Para alinear hijos en columna */
 }
+.app-grid {
+  height: 100%; /* El contenedor ocupa el 100% del alto */
+  display: grid; /* Opcional: para usar flexbox */
+}
 p-button {
   padding: 16px;
   padding-right: 32px;

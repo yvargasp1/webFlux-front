@@ -5,6 +5,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms'; // Importa ReactiveFormsModule
 import { AuthService } from '../../../services/auth.service';
 import { Login } from '../../../models/auth/login.dto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,7 @@ export class LoginComponent {
     password: new FormControl('', Validators.required),
   });
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService , private router:Router) {}
 
   onLoginForm() {
     const loginUser = new Login();
@@ -31,6 +32,7 @@ export class LoginComponent {
       next: (value) => {
         console.log(value);
         localStorage.setItem('token',value.token)
+        this.router.navigate(['/home'])
       },
       error: (err) => {
         console.log(err);

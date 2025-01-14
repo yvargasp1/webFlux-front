@@ -11,10 +11,6 @@ export class ProductsService {
   private URL = environment.apiUrl;
 
   public getProducts() {
-    const headers = new HttpHeaders({
-      Authorization: `Bearer ${environment.token}`,
-    });
-
-    return this.httpClient.get<any>(`${this.URL}/product`, { headers });
+    return this.httpClient.get<any>(`${this.URL}/product`);
   }
 }

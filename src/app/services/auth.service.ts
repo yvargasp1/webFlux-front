@@ -12,4 +12,8 @@ export class AuthService {
   login(body: Login) {
     return this.http.post<any>(`${this.URL}/login`, body);
   }
+
+  getAuthToken(){
+    return localStorage.getItem('token') || ''
+  }
 }

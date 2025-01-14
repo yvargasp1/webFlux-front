@@ -1,1 +1,14 @@
-<p class="font-bold">dashboard works!</p>
+<div class="app-container p-16">
+  <div class="grid grid-cols-1 gap-4">
+    <div class="font-bold text-center text-lg">Productos</div>
+    <div class="grid grid-cols-3 gap-4">
+      <ng-container *ngFor="let item of products">
+        <div class="h-20 border-2 p-4">
+          <div class="font-normal">
+            {{ item.name }}
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

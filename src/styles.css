@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html,
+body {
+  height: 100%; /* Asegúrate de que el HTML y el body ocupen el 100% de la pantalla */
+  margin: 0; /* Elimina los márgenes predeterminados */
+}
+
+input {
+  border-width: 2px;
+  display: flex;
+  width: 50%;
+  padding: 4px;
+}
+.app-container {
+  height: 100%; /* El contenedor ocupa el 100% del alto */
+  display: flex; /* Opcional: para usar flexbox */
+  flex-direction: column; /* Para alinear hijos en columna */
+}
+p-button {
+  padding: 16px;
+  padding-right: 32px;
+  padding-left: 32px;
+  border-width: 2px;
+}

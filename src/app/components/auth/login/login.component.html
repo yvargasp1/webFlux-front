@@ -1,0 +1,26 @@
+<div class="app-container justify-center pb-16">
+  <div class="grid grid-cols-1 gap-8 items-center p-4">
+    <div class="flex justify-center">
+      <div class="font-bold text-2xl">Ingreso</div>
+    </div>
+    <form [formGroup]="loginForm" class="flex justify-center">
+      <div class="rounded-full border-2 w-[80%] p-4 grid grid-cols-1 gap-4">
+        <div class="flex justify-center">
+          <div class="font-semibold text-xl">Nombre de usuario</div>
+        </div>
+        <div class="flex justify-center">
+          <input  formControlName="username" type="text" pInputText style="border-width: 2px" />
+        </div>
+        <div class="flex justify-center">
+          <div class="font-semibold text-xl">Contraseña</div>
+        </div>
+        <div class="flex justify-center">
+          <input  formControlName="password" type="password" pInputText style="border-width: 2px" />
+        </div>
+        <div class="flex justify-center">
+          <p-button (onClick)="onLoginForm()" [disabled]="loginForm.invalid" label="Login"  class="rounded-full" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

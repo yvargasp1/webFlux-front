@@ -1,0 +1,24 @@
+<div class="app-container p-16">
+  <div class="grid grid-cols-1 gap-4">
+    <div class="font-bold text-center text-lg">Agregar Productos</div>
+    <form [formGroup]="ProductForm" class="flex justify-center">
+      <div class="rounded-lg border-2 w-[70%] p-4 grid grid-cols-1 gap-4">
+        <div class="flex justify-center">
+          <div class="font-semibold text-xl">Nombre</div>
+        </div>
+         <div class="flex justify-center">
+          <input  formControlName="name" type="text" pInputText style="border-width: 2px" />
+        </div>
+         <div class="flex justify-center">
+          <div class="font-semibold text-xl">Precio</div>
+        </div>
+         <div class="flex justify-center">
+          <input  formControlName="price" type="number" [min]="0" pInputText style="border-width: 2px" />
+        </div>
+         <div class="flex justify-center">
+          <p-button (onClick)="onSaveProduct()" [disabled]="ProductForm.invalid" label="Guardar"  class="rounded-full" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

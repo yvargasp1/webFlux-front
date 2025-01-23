@@ -25,3 +25,18 @@ export const saveProductFailure = createAction(
   '[Product] Save Product Failure',
   props<{ error: any }>()
 )
+
+export const deleteProduct = createAction(
+  '[Product] Delete Product',
+  props<{ id: number }>()
+)
+
+export const deleteProductSuccess = createAction(
+  '[Product] Delete Product Success',
+  props<{ id: number }>()
+)
+
+export const deleteProductFailure = createAction(
+  '[Product] Delete Product failure',
+  props<{ error: any }>()
+)

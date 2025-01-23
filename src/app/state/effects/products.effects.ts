@@ -48,4 +48,18 @@ export class ProductsEffects {
       ),
     { dispatch: false } // Indica que este efecto no despacha una acción
   )
+
+  deleteProduct$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(ProductActions.deleteProduct),
+      mergeMap((action) =>
+        this.productService.deleteProductById(action.id).pipe(
+          map(() => ProductActions.deleteProductSuccess({ id: action.id })),
+          catchError((err) =>
+            of(ProductActions.deleteProductFailure({ error: err }))
+          )
+        )
+      )
+    )
+  )
 }

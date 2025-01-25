@@ -1,5 +1,6 @@
 export class Products {
     id!: number;
     name!:string;
-    price!:number
+    price!:number;
+    image!:string;
 }

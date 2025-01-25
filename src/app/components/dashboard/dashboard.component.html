@@ -10,12 +10,24 @@
     <div class="font-bold text-center text-lg">Productos</div>
     <div class="grid grid-cols-3 gap-4">
       <ng-container *ngFor="let item of products$ | async">
-        <div class="h-20 border-2 p-4 grid">
+        <div class="border-2 p-4 grid grid-cols-1 gap-4">
           <div class="inline-flex justify-between">
             <div class="font-normal">
-              {{ item.name }}
+              <span class="font-semibold"> Nombre: </span> {{ item.name }}
             </div>
-            <i (click)="onDeleteProduct(item.id)" class="cursor-pointer pi pi-times"></i>
+            <i
+              (click)="onDeleteProduct(item.id)"
+              class="cursor-pointer pi pi-times"
+            ></i>
+          </div>
+          <div class="font-normal">
+            <span class="font-semibold"> Precio: </span> {{ item.price }}
+          </div>
+          <div *ngIf="item.image" class="flex justify-center">
+            <img [src]="item.image" class="max-h-40" alt="" />
+          </div>
+           <div *ngIf="!item.image" class="flex justify-center">
+           <img [src]="'assets/notfound.png'" class="max-h-40" alt="">
           </div>
         </div>
       </ng-container>
